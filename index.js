@@ -38,7 +38,7 @@ const limiter = (0, express_rate_limit_1.default)({
 // Body parsing Middleware
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
-app.use(limiter);
+// app.use(limiter);
 app.set("trust proxy", true);
 app.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     return res.status(200).send({
