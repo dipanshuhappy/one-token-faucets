@@ -1,5 +1,6 @@
 import express, { Application, Request, Response } from "express";
 import rateLimit from "express-rate-limit";
+import cors from "cors";
 import bodyParser from "body-parser";
 import { ABI } from "./token";
 import Web3 from "web3";
@@ -28,6 +29,7 @@ const limiter = rateLimit({
 });
 
 // Body parsing Middleware
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // app.use(limiter);
@@ -45,6 +47,8 @@ app.post(
   async (req: Request, res: Response): Promise<Response> => {
     const { address, chainId } = req.body;
     console.log(address);
+    console.log(chainId, "chainid");
+    console.log(req.body, "body");
     const accountAddress = "0x62e9a8374AE3cdDD0DA7019721CcB091Fed927aE";
     let contractAddress = "";
     let proiverUrl = "";
