@@ -14,6 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const express_rate_limit_1 = __importDefault(require("express-rate-limit"));
+const body_parser_1 = __importDefault(require("body-parser"));
 const web3_1 = __importDefault(require("web3"));
 const POLY_TOKEN_ADDRESS = "0x3022F6b9E3D578Dd90e84abfbef2F75DB838fbB2";
 const ETH_TOKEN_ADDRESS = "0xe7399b79838acc8caaa567fF84e5EFd0d11BB010";
@@ -44,7 +45,7 @@ app.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         message: "Hello World!",
     });
 }));
-app.post("/faucets", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+app.post("/faucets", body_parser_1.default.json(), (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { address, chainId } = req.body;
     console.log(address);
     const accountAddress = "0x62e9a8374AE3cdDD0DA7019721CcB091Fed927aE";
