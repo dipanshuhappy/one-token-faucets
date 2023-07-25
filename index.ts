@@ -107,7 +107,7 @@ app.post("/faucets", async (req: Request, res: Response): Promise<Response> => {
       from: signer.address,
       gas: (6000000).toString(),
     })
-    .on("transactionHash", (hash) => {
+    .on("transactionHash", (hash: any) => {
       console.log(hash, "hash");
     })
 
