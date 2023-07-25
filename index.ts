@@ -4,8 +4,8 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import { ABI } from "./token";
 import Web3 from "web3";
-const POLY_TOKEN_ADDRESS = "0x3022F6b9E3D578Dd90e84abfbef2F75DB838fbB2";
-const ETH_TOKEN_ADDRESS = "0xe7399b79838acc8caaa567fF84e5EFd0d11BB010";
+const POLY_TOKEN_ADDRESS = "0xB4a11f376335F6572224aea2a5dFd62dB95E7dfd";
+const ETH_TOKEN_ADDRESS = "0x9E6A3BE569D211E3B96F2ED3465F4eeF78996b37";
 const ETH_PROVIDER =
   "https://eth-sepolia.g.alchemy.com/v2/z9xzfmxaZkYiqOqNwBNfG0Hu6IBqPLN8";
 const POLY_PROVIDER =
